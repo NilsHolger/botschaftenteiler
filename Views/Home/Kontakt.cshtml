@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Kontakt";
+}
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+<div class="span12">
+    <div class="whity content">
+        <!-- Main Content Starts Here -->
+        <!-- Content should be encloased inside div with the class "posts" -->
+        <div class="posts">
+            <!-- Each entry should be enclosed inside div with the class "entry" -->
+            <div class="entry">
+                <div class="padd">
+                    <!-- Contact Page title -->
+                    <h2>Kontakt</h2>
+                    <!-- Contact Page Para -->
+                    <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus varius interdum. Phasellus at lorem ut lectus fermentum convallis.</p>
+                </div>
+
+                <div class="row">
+                    <div class="span8">
+                        <div class="padd">
+                            <div class="co-form">
+                                <form class="form-horizontal" method="post">
+                                    <fieldset>
+                                        <div class="control-group">
+                                            <label class="control-label" for="name">Name</label>
+                                            <div class="controls">
+                                                <input type="text" class="input-medium" id="name" name="name" data-val="true" data-val-required="*">
+                                                <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="email">Email</label>
+                                            <div class="controls">
+                                                <input type="text" class="input-medium" id="email" name="email" data-val="true" data-val-required="*" data-val-email="Nicht Gültig">
+                                                <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="website">Website</label>
+                                            <div class="controls">
+                                                <input type="text" class="input-medium" id="website" name="website" data-val="true" data-val-required="*">
+                                                <span class="field-validation-valid" data-valmsg-for="website" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="comment">Message</label>
+                                            <div class="controls">
+                                                <textarea class="input-medium" id="comment" rows="3" name="comment" data-val="true" data-val-required="*"></textarea>
+                                                <span class="field-validation-valid" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn">Send</button>
+                                            @if (ViewBag.MailSent != null && ViewBag.MailSent)
+                                            {
+                                                <div>Nachricht gesendet!</div>
+                                            }
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="padd">
+                            <p class="caddress">
+                                <address>
+                                    <strong>Nils-Holger Nägele</strong><br>
+                                    Salierring 14<br>
+                                    50677 Köln<br>
+                                    <abbr title="Phone">T:</abbr>
+                                    (0171) 531-0594.<br>
+                                    <br>
+                                    <strong>Email</strong><br>
+                                    <a href="mailto:#">nils@nilsnaegele.com</a>
+                                </address>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gmap">
+                    <div class="padd">
+                        <iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2514.8309012611753!2d6.9458531!3d50.92684500000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf24543c52e2dd%3A0x8ee72152dc5fe90f!2sSalierring+14%2C+50677+K%C3%B6ln!5e0!3m2!1sde!2sde!4v1417853813418"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Ends Here -->
+    </div>
+
+</div>

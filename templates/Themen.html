@@ -1,0 +1,42 @@
+﻿<div class="message-header">
+        <h1>Botschaften Teiler</h1>
+        <p class="lead">Neueste Botschaften...</p>
+        <div>Botschaften Anzahl: {{data.topics.length}}</div>
+    </div>
+
+<div>
+    <a href="#/neuenachricht">Neue Nachricht hinzufügen</a>
+</div>
+
+    <div class="progress progress-striped active" ng-show="isBusy">
+        <div class="bar" style="width:100%"></div>
+    </div>
+
+    <div class="messages">
+        <div class="message row" ng-repeat="item in data.topics">
+            <div class="title span10">
+                <a ng-href="#/nachricht/{{ item.id }}">{{ item.title }}</a>
+            </div>
+            <div class="date span2">
+                {{item.created | date:"medium"}}
+            </div>
+            <div class="contents span12">
+                {{item.body}}
+            </div>
+            <div class="toolbar span12">
+                <a class="btn btn-primary reply-button" style="color:white;" ng-href="#/nachricht/{{ item.id }}">Antworten</a>
+                <!--<button class="btn btn-primary reply-button">Antworten</button>-->
+            </div>
+            <div class="replies span12">
+                <div class="reply" ng-repeat="reply in item.replies">
+                    <div class="created pull-right">
+                        {{reply.created | date:"medium"}}
+                    </div>
+                    <div class="content">
+                        {{reply.body}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
